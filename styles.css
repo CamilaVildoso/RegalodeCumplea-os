@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Cambiado a min-height para evitar que el cuerpo sea más pequeño que la pantalla */
+  background: url(./img/fondo3.jpg) no-repeat top center/cover;
+}
+
+.container {
+  width: 90%; /* Cambiado a un porcentaje para que se ajuste mejor en diferentes tamaños de pantalla */
+  max-width: 588px; 
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.container h1 {
+  font-size: 3em; /* Reducido ligeramente el tamaño de fuente para tamaños de pantalla más pequeños */
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ajustada la sombra del texto */
+}
+
+.principal {
+  font-size: 1.2em; /* Reducido el tamaño de fuente */
+  padding: 1em; /* Aumentado el relleno para mejorar la legibilidad */
+  color: black;
+  background: url(./img/difuminado.jpg) no-repeat top center/cover;
+  border: 2px dotted black; /* Reducido el grosor del borde */
+  border-radius: 8px; /* Reducido el radio de borde */
+  margin: 1em; /* Aumentado el margen para separar del borde del contenedor */
+}
+
+.gift {
+  position: relative;
+  height: 8em; /* Reducido ligeramente el tamaño del regalo */
+  width: 8em; /* Reducido ligeramente el tamaño del regalo */
+  margin: 0.5em; /* Reducido el margen entre los regalos */
+  cursor: pointer;
+  background-image: url('./img/regalo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s;
+  border: none;
+  background-color: transparent;
+}
+
+.gift-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em; /* Ajustado el margen superior */
+}
+
+.gift:hover  {
+  opacity: 0.5;
+}
+
+#gift-display {
+  size: 1em;
+  position: fixed; /* Posición fija para que la imagen se superponga a otros elementos */
+  top: 50%; /* Colocar la parte superior de la imagen en el centro vertical */
+  left: 50%; /* Colocar el lado izquierdo de la imagen en el centro horizontal */
+  transform: translate(-50%, -50%); /* Centrar la imagen exactamente en el centro */
+  z-index: 99; /* Asegurar que la imagen esté por encima de otros elementos */
+}
+
+#gift-display img {
+  max-width: 90%; /* Establecer el ancho máximo de la imagen al 90% del tamaño del contenedor */
+  max-height: 90vh; /* Establecer la altura máxima de la imagen al 90% de la altura de la ventana */
+}
+
+#gift-display p {
+  background-image: url(./img/fondocarta.jpg);
+  background-size: 18em;
+  background-repeat: no-repeat;
+  border: dotted;
+  font-size: 2.5em; /* Reducido ligeramente el tamaño de fuente para tamaños de pantalla más pequeños */
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Media queries para tamaños de pantalla pequeños */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1em;
+  }
+
+  .container h1 {
+    font-size: 2em;
+  }
+
+  .principal {
+    font-size: 0.8em;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .gift {
+    height: 4em;
+    width: 4em;
+    margin: 0.3em;
+  }
+
+  .gift-options {
+    margin-top: 0.5em;
+  }
+
+  #gift-display p {
+    font-size: 1.5em;
+  }
+}
